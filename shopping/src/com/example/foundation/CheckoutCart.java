@@ -1,42 +1,27 @@
 package com.example.foundation;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 //购物车
 public class CheckoutCart {
-	ArrayList<Goods> goodsList;//购物单
-	double totalPrice;//总价
-	int numOfGoods;//总件数
-	//int kindOfGoods;//商品的种类
-	public void setGoodsList(ArrayList<Goods> goodsList)
+	LinkedList<Item> itemsList;//链表----购物单 便于插入与删除
+	//double totalPrice;//总价
+	//int numOfGoods;//总件数
+	public LinkedList<Item> items= new LinkedList<Item>();
+	public LinkedList<Item>getItems()
 	{
-		this.goodsList=goodsList;
+		return items;
 	}
-	public void compute()
+	public void setItems(LinkedList<Item>items)
 	{
-		for(int i=0;i<goodsList.size();i++)
-		{
-			//获取总件数
-			numOfGoods += goodsList.get(i).getQuantity();
-			//计算总价
-			totalPrice =totalPrice+goodsList.get(i).getGoodsPrice()*goodsList.get(i).getQuantity();
-		}
+		this.items=items;
+	}
+	public void addToCart(Item item)
+	{
+		items.add(item);
 	}
 	public double getTotalPrice()
 	{
-		return totalPrice;
-	}
-	public int getNumOfGoods()
-	{
-		return numOfGoods;
-	}
-	
-	@Override
-	public String toString() {
-		return "CheckoutCart [goodsList=" + goodsList + ", totalPrice=" + totalPrice + ", numOfGoods=" + numOfGoods
-				+ "]";
-	}
-	public void showInfo()
-	{
-		System.out.println(toString());
+		return 0.0;
 	}
 }

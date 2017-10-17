@@ -6,12 +6,16 @@ public class Goods {
 	private String goodsId;
 	private double goodsPrice;
 	private int quantity;
-	public Goods(String goodsName,String goodsId,double goodsPrice,int quantity) {
+	//public Goods()
+	{
+		
+	}
+	public Goods(String goodsName,String goodsId,double goodsPrice) {
 		// TODO Auto-generated constructor stub
 		this.goodsId=goodsId;
 		this.goodsName=goodsName;
 		this.goodsPrice=goodsPrice;
-		this.quantity=quantity;
+		//this.quantity=quantity;
 	}
 	public String getGoodsName() {
 		return goodsName;
@@ -31,18 +35,15 @@ public class Goods {
 	public void setGoodsPrice(double goodsPrice) {
 		this.goodsPrice = goodsPrice;
 	}
-	public int getQuantity() {
-		return quantity;
-	}
-	public void setQuantity(int quantity) {
-		this.quantity = quantity;
-	}
+//	public int getQuantity() {
+//		return quantity;
+//	}
+//	public void setQuantity(int quantity) {
+//		this.quantity = quantity;
+//	}
 	@Override
 	public String toString() {
 		return "Goods [goodsName=" + goodsName + ", goodsId=" + goodsId + ", goodsPrice=" + goodsPrice + "]";
-	}
-	public void showInfo(){
-		System.out.println(toString());
 	}
 	
 	
